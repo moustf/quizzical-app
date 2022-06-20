@@ -1,0 +1,49 @@
+{
+  "name": "quizzical-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An application for taking a quick quiz on sports topics.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "webpack serve --config webpack.config.js --open",
+    "build": "webpack build",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moustf/quizzical-app.git"
+  },
+  "keywords": [],
+  "author": "Mustafa Salem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moustf/quizzical-app/issues"
+  },
+  "homepage": "https://github.com/moustf/quizzical-app#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.52.3",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "jest": "^28.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  }
+}
