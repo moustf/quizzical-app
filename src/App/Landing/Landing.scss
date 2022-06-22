@@ -1,0 +1,37 @@
+$titleBlue: #293264;
+$buttonBg: #4d5b9e;
+$white: #f5f7fb;
+
+.landing {
+  width: 50%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  .landing__title {
+    color: #{$titleBlue};
+    font-size: xxx-large;
+    font-family: "Karla", sans-serif;
+  }
+  .landing__para {
+    color: #{$titleBlue};
+    font-weight: 500;
+  }
+  .landing__start-game {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 1rem;
+    background-color: #{$buttonBg};
+    color: #{$white};
+    border: 0;
+    font-size: medium;
+    cursor: pointer;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+    &:hover {
+      opacity: 0.8;
+      box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
