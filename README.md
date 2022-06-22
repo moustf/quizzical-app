@@ -7,3 +7,7 @@ An application for taking a quick quiz on sports topics.
 - **`npm start`** : to start the project on a hot reload webpack server.
 - **`npm test`** : to run all the tests written in the test files inside each component.
 - **`npm build`** : to build the distributed directory in the production mode.
+
+## What is this project?
+Quizzical app is an app that offer a short quiz on the sports topic. The questions are fixed, and don't vary on each quiz. 
+The app is built using *Reactjs* library and deployed using *Heroku* deployment.
