@@ -27,3 +27,12 @@ The app is built using *Reactjs* library and deployed using *Heroku* deployment.
 - As a user, I should be able to see the "Play again" button next to the result statement.
 - As a user, I should be able to press the "Play again" button.
 - As a user, I should be able to start a new quiz when I press the "Play again" button.
+
+## How to install the project on your local machine:
+![quizzical](https://user-images.githubusercontent.com/77394697/174905808-68204707-2ae6-424b-a67d-756512e2d028.PNG)
+---
+- You can click the _code_ drop-down menu as illustrated in the picture above and copy the link to clone the repo.
+- Now go to your terminal and type: `git clone <the link here>` and then the repo will be cloned to your local machine.
+- By now you have to open your IDE -I recommend VSCode- and open the project.
+- to open a live page from your local machine project, you can run the `npm start` command which will open a live hot server to work with.
+- Happy Coding!🤞
