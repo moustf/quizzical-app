@@ -3,13 +3,18 @@ $buttonBg: #4d5b9e;
 $white: #f5f7fb;
 
 .landing {
-  width: 50%;
-  height: 30vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
   align-items: center;
+  background-image: url(file:///C:/GazaSkyGeeks/React/quizzical-app/assets/blobs.svg),
+    url(file:///C:/GazaSkyGeeks/React/quizzical-app/assets/blobs2.svg);
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  background-size: 25%;
   .landing__title {
     color: #{$titleBlue};
     font-size: xxx-large;
