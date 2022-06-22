@@ -1,5 +1,6 @@
 import React from "react";
 import Landing from "./Landing/Landing";
+import "./App.scss";
 
 export default function App() {
   return (
