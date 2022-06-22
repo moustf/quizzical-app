@@ -36,3 +36,13 @@ The app is built using *Reactjs* library and deployed using *Heroku* deployment.
 - By now you have to open your IDE -I recommend VSCode- and open the project.
 - to open a live page from your local machine project, you can run the `npm start` command which will open a live hot server to work with.
 - Happy Coding!🤞
+
+## Technologies I used:
+- *React library*.
+- *NPM*.
+- *Webpack*.
+- *SASS*.
+- *Jest library*.
+- *Babel*.
+- *Figma*.
+- *Heroku deployment*.
