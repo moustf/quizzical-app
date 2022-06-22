@@ -11,3 +11,8 @@ An application for taking a quick quiz on sports topics.
 ## What is this project?
 Quizzical app is an app that offer a short quiz on the sports topic. The questions are fixed, and don't vary on each quiz. 
 The app is built using *Reactjs* library and deployed using *Heroku* deployment.
+
+## User journey:
+- When the user first opens the app, he/she will find the landing page which will take him to the quiz page by pressing the "Start quiz" button.
+- When the user hit the "Start quiz" button, the quiz interface will appear to the user. The user should be able to click any of the answers to mark it as selected, then "Check answers" to see his result.
+- When the user click the "Play again" button, a new quiz will be started.
