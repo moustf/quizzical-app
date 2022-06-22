@@ -46,3 +46,9 @@ The app is built using *Reactjs* library and deployed using *Heroku* deployment.
 - *Babel*.
 - *Figma*.
 - *Heroku deployment*.
+
+## Design:
+- To visit the link of the design, click ***[HERE](https://www.figma.com/file/E9S5iPcm10f0RIHK8mCqKL/Quizzical-App?node-id=0%3A1)***
+
+## Developer:
+- This app is coded by ***[Mustafa Salem](https://www.github.com/moustf)***, a junior web developer.
