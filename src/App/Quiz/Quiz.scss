@@ -1,0 +1,79 @@
+$lightMove: #d6dbf5;
+$white: #f5f7fb;
+$darkBlue: #293264;
+
+@mixin verticallyCenter() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  width: 100%;
+  @include verticallyCenter();
+  transform: translateY(39rem);
+  background-color: #{$white};
+  background-image: url(file:///C:/GazaSkyGeeks/React/quizzical-app/assets/blobs.svg),
+    url(file:///C:/GazaSkyGeeks/React/quizzical-app/assets/blobs2.svg);
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  background-size: 15%;
+  .que-component {
+    width: 80%;
+    height: 25vh;
+    @include verticallyCenter();
+    border-bottom: 1px solid #{$lightMove};
+  }
+  .check-answers {
+    width: 12rem;
+    height: 4rem;
+    background-color: #{$darkBlue};
+    @include flexCenter();
+    margin: 3rem 0;
+    border: none;
+    color: #{$white};
+    font-size: large;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba($color: #000000, $alpha: 0.2);
+    // display: none;
+    &:hover {
+      box-shadow: 0px 4px 4px 0px rgba($color: #000000, $alpha: 0.5);
+      opacity: 0.8;
+    }
+  }
+  .score-replay {
+    margin: 3rem 0;
+    @include flexCenter();
+    display: none;
+    p.score {
+      color: #{$darkBlue};
+      margin-right: 2rem;
+      font-weight: bolder;
+      font-size: larger;
+    }
+    .replay {
+      width: 8rem;
+      height: 2.5rem;
+      background-color: #{$darkBlue};
+      @include flexCenter();
+      border: none;
+      color: #{$white};
+      font-size: medium;
+      border-radius: 1rem;
+      cursor: pointer;
+      box-shadow: 0px 4px 4px 0px rgba($color: #000000, $alpha: 0.2);
+      &:hover {
+        box-shadow: 0px 4px 4px 0px rgba($color: #000000, $alpha: 0.5);
+        opacity: 0.8;
+      }
+    }
+  }
+}
