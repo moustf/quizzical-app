@@ -1,0 +1,38 @@
+$lightMove: #d6dbf5;
+$white: #F5F7FB;
+$darkBlue: #293264;
+$green: #94D7A2;
+$red: #F8BCBC;
+
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: #{$justify};
+    align-items: center;
+}
+
+.answers {
+    width: 70%;
+    @include flexCenter(space-between);
+    .answer {
+        width: 12rem;
+        height: 2rem;
+        border-radius: 0.7rem;
+        border: 1.5px solid #{$lightMove};
+        color: #{$darkBlue};
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
+        @include flexCenter(center);
+        &.selected {
+            background-color: #{$lightMove};
+        }
+        &.correct {
+            background-color: #{$green};
+        }
+        &.wrong {
+            background-color: #{$red};
+            opacity: 0.5;
+        }
+    }
+}
