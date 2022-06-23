@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import StartBtn from "../StartBtn/StartBtn";
+import StartBtn from "./StartBtn/StartBtn";
 import "./Landing.scss";
 
 export default function Landing(props) {

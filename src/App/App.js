@@ -1,5 +1,6 @@
 import React from "react";
 import Landing from "./Landing/Landing";
+import Quiz from "./Quiz/Quiz";
 import "./App.scss";
 
 export default function App() {
@@ -9,9 +10,14 @@ export default function App() {
     setIsHidden((prevIsHidden) => !prevIsHidden);
   }
 
+  const style = {
+    display: isHidden ? "block" : "none",
+  };
+
   return (
     <div className="container">
       <Landing isHidden={isHidden} fn={handleClick} />
+      <Quiz style={style} />
     </div>
   );
 }
