@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import StartBtn from "../StartBtn/StartBtn";
 import "./Landing.scss";
 
 export default function Landing(props) {
@@ -13,9 +14,7 @@ export default function Landing(props) {
       <p className="landing__para">
         An app for taking a quick quiz on sports topic.
       </p>
-      <button className="landing__start-game" type="button" onClick={props.fn}>
-        Start quiz
-      </button>
+      <StartBtn fn={props.fn} />
     </section>
   );
 }
