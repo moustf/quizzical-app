@@ -11,7 +11,7 @@ export default function App() {
   }
 
   const style = {
-    display: isHidden ? "block" : "none",
+    display: isHidden ? "flex" : "none",
   };
 
   return (
