@@ -1,6 +1,8 @@
 $lightMove: #d6dbf5;
 $white: #f5f7fb;
 $darkBlue: #293264;
+$green: #94D7A2;
+$red: #F8BCBC;
 
 @mixin verticallyCenter() {
   display: flex;
@@ -9,9 +11,15 @@ $darkBlue: #293264;
   justify-content: center;
 }
 
-@mixin flexCenter {
+@mixin flexCenter1 {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenter($justify) {
+  display: flex;
+  justify-content: #{$justify};
   align-items: center;
 }
 
@@ -30,12 +38,38 @@ $darkBlue: #293264;
     height: 25vh;
     @include verticallyCenter();
     border-bottom: 1px solid #{$lightMove};
+    .answers {
+      width: 70%;
+      @include flexCenter(space-between);
+      .answer {
+        width: 12rem;
+        height: 2rem;
+        border-radius: 0.7rem;
+        border: 1.5px solid #{$lightMove};
+        color: #{$darkBlue};
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
+        @include flexCenter(center);
+        &.selected {
+          background-color: #{$lightMove};
+        }
+        &.correct {
+          background-color: #{$green};
+        }
+        &.wrong {
+          background-color: #{$red};
+          opacity: 0.5;
+        }
+      }
+    }
   }
   .check-answers {
     width: 12rem;
     height: 4rem;
     background-color: #{$darkBlue};
-    @include flexCenter();
+    @include flexCenter1();
     margin: 3rem 0;
     border: none;
     color: #{$white};
@@ -51,7 +85,7 @@ $darkBlue: #293264;
   }
   .score-replay {
     margin: 3rem 0;
-    @include flexCenter();
+    @include flexCenter1();
     display: none;
     p.score {
       color: #{$darkBlue};
@@ -63,7 +97,7 @@ $darkBlue: #293264;
       width: 8rem;
       height: 2.5rem;
       background-color: #{$darkBlue};
-      @include flexCenter();
+      @include flexCenter1();
       border: none;
       color: #{$white};
       font-size: medium;
