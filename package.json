@@ -2,6 +2,9 @@
   "name": "quizzical-app",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": "16.14.2"
+  },
   "description": "An application for taking a quick quiz on sports topics.",
   "main": "webpack.config.js",
   "scripts": {
