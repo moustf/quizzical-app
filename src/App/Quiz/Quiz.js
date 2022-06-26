@@ -35,6 +35,17 @@ export default function Quiz(props) {
     Data.results.forEach((obj, ind) => {
       if (answers[ind] === obj.correct_answer) {
         score++;
+        document
+          .getElementsByClassName("correct-ans")
+          [ind].classList.add("correct");
+      } else {
+        document.getElementsByClassName("selected")[ind].classList.add("wrong");
+        document
+          .getElementsByClassName("selected")
+          [ind].classList.add("selected");
+        document
+          .getElementsByClassName("correct-ans")
+          [ind].classList.add("correct");
       }
     });
     const scoreSpan = document.querySelector("span.score");
@@ -57,10 +68,10 @@ export default function Quiz(props) {
       <section className="que-component">
         <Question qu={data[1].question} />
         <div className="answers">
-          {addAnswers(data[1].incorrect_answers)}
           <p className="answer correct-ans" onClick={isCorrect}>
             {data[1].correct_answer}
           </p>
+          {addAnswers(data[1].incorrect_answers)}
         </div>
       </section>
       <section className="que-component">
@@ -75,10 +86,10 @@ export default function Quiz(props) {
       <section className="que-component">
         <Question qu={data[3].question} />
         <div className="answers">
-          {addAnswers(data[3].incorrect_answers)}
           <p className="answer correct-ans" onClick={isCorrect}>
             {data[3].correct_answer}
           </p>
+          {addAnswers(data[3].incorrect_answers)}
         </div>
       </section>
       <section className="que-component">
@@ -93,10 +104,10 @@ export default function Quiz(props) {
       <section className="que-component">
         <Question qu={data[5].question} />
         <div className="answers">
-          {addAnswers(data[5].incorrect_answers)}
           <p className="answer correct-ans" onClick={isCorrect}>
             {data[5].correct_answer}
           </p>
+          {addAnswers(data[5].incorrect_answers)}
         </div>
       </section>
       <section className="que-component">
@@ -111,10 +122,10 @@ export default function Quiz(props) {
       <section className="que-component">
         <Question qu={data[7].question} />
         <div className="answers">
-          {addAnswers(data[7].incorrect_answers)}
           <p className="answer correct-ans" onClick={isCorrect}>
             {data[7].correct_answer}
           </p>
+          {addAnswers(data[7].incorrect_answers)}
         </div>
       </section>
       <section className="que-component">
@@ -129,10 +140,10 @@ export default function Quiz(props) {
       <section className="que-component">
         <Question qu={data[9].question} />
         <div className="answers">
-          {addAnswers(data[9].incorrect_answers)}
           <p className="answer correct-ans" onClick={isCorrect}>
             {data[9].correct_answer}
           </p>
+          {addAnswers(data[9].incorrect_answers)}
         </div>
       </section>
       <button
