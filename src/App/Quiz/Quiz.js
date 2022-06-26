@@ -54,6 +54,10 @@ export default function Quiz(props) {
     document.querySelector(".score-replay").style.display = "flex";
   }
 
+  function playAgain() {
+    window.location.reload();
+  }
+
   return (
     <main className="quiz" style={props.style}>
       <section className="que-component">
@@ -159,7 +163,7 @@ export default function Quiz(props) {
           You scored<span className="score"></span>/
           <span className="total">10</span>correct answers
         </p>
-        <button type="button" className="replay">
+        <button type="button" className="replay" onClick={playAgain}>
           Play again
         </button>
       </section>
