@@ -1,13 +1,30 @@
 import React from "react";
-import Data from "../../data";
 import Question from "./Question/Question";
+import axios from "axios";
 import "./Quiz.scss";
 
 export default function Quiz(props) {
-  const [data, setData] = React.useState(Data.results);
-  const [isShown, setIsShown] = React.useState(false);
-
+  const [questions, setQuestions] = React.useState([]);
+  const [choices, setChoices] = React.useState([]);
+  const [isDone, setIsDone] = React.useState(false);
   const [answers, setAnswers] = React.useState([]);
+
+  React.useEffect(() => {
+    axios
+      .get(
+        "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple"
+      )
+      .then((res) => {
+        setQuestions(res.data.results.map((obj) => obj.question));
+        setChoices(
+          res.data.results.map((obj) => [
+            ...obj.incorrect_answers,
+            obj.correct_answer,
+          ])
+        );
+        setIsDone(true);
+      });
+  }, []);
 
   function isCorrect(e) {
     e.target.classList.add("selected");
@@ -24,7 +41,11 @@ export default function Quiz(props) {
 
   function addAnswers(arr) {
     return arr.map((ans, ind) => (
-      <p className="answer" key={ind} onClick={isCorrect}>
+      <p
+        className={ind === 3 ? "answer correct-ans" : "answer"}
+        key={ind}
+        onClick={isCorrect}
+      >
         {ans}
       </p>
     ));
@@ -32,8 +53,8 @@ export default function Quiz(props) {
 
   function getScore() {
     let score = 0;
-    Data.results.forEach((obj, ind) => {
-      if (answers[ind] === obj.correct_answer) {
+    choices.forEach((answer, ind) => {
+      if (answers[ind] === answer[3]) {
         score++;
         document
           .getElementsByClassName("correct-ans")
@@ -60,96 +81,66 @@ export default function Quiz(props) {
 
   return (
     <main className="quiz" style={props.style}>
-      <section className="que-component">
-        <Question qu={data[0].question} />
-        <div className="answers">
-          {addAnswers(data[0].incorrect_answers)}
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[0].correct_answer}
-          </p>
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[1].question} />
-        <div className="answers">
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[1].correct_answer}
-          </p>
-          {addAnswers(data[1].incorrect_answers)}
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[2].question} />
-        <div className="answers">
-          {addAnswers(data[2].incorrect_answers)}
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[2].correct_answer}
-          </p>
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[3].question} />
-        <div className="answers">
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[3].correct_answer}
-          </p>
-          {addAnswers(data[3].incorrect_answers)}
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[4].question} />
-        <div className="answers">
-          {addAnswers(data[4].incorrect_answers)}
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[4].correct_answer}
-          </p>
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[5].question} />
-        <div className="answers">
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[5].correct_answer}
-          </p>
-          {addAnswers(data[5].incorrect_answers)}
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[6].question} />
-        <div className="answers">
-          {addAnswers(data[6].incorrect_answers)}
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[6].correct_answer}
-          </p>
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[7].question} />
-        <div className="answers">
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[7].correct_answer}
-          </p>
-          {addAnswers(data[7].incorrect_answers)}
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[8].question} />
-        <div className="answers">
-          {addAnswers(data[8].incorrect_answers)}
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[8].correct_answer}
-          </p>
-        </div>
-      </section>
-      <section className="que-component">
-        <Question qu={data[9].question} />
-        <div className="answers">
-          <p className="answer correct-ans" onClick={isCorrect}>
-            {data[9].correct_answer}
-          </p>
-          {addAnswers(data[9].incorrect_answers)}
-        </div>
-      </section>
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[0]} />
+          <div className="answers">{addAnswers(choices[0])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[1]} />
+          <div className="answers">{addAnswers(choices[1])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[2]} />
+          <div className="answers">{addAnswers(choices[2])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[3]} />
+          <div className="answers">{addAnswers(choices[3])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[4]} />
+          <div className="answers">{addAnswers(choices[4])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[5]} />
+          <div className="answers">{addAnswers(choices[5])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[6]} />
+          <div className="answers">{addAnswers(choices[6])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[7]} />
+          <div className="answers">{addAnswers(choices[7])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[8]} />
+          <div className="answers">{addAnswers(choices[8])}</div>
+        </section>
+      )}
+      {isDone && (
+        <section className="que-component">
+          <Question qu={questions[9]} />
+          <div className="answers">{addAnswers(choices[9])}</div>
+        </section>
+      )}
       <button
         type="button"
         className="check-answers"
