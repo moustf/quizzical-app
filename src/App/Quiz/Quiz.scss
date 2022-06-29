@@ -43,7 +43,7 @@ $red: #F8BCBC;
       @include flexCenter(space-between);
       .answer {
         width: 12rem;
-        height: 2rem;
+        min-height: 2rem;
         border-radius: 0.7rem;
         border: 1.5px solid #{$lightMove};
         color: #{$darkBlue};
