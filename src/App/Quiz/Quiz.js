@@ -1,6 +1,7 @@
 import React from "react";
 import Question from "./Question/Question";
 import axios from "axios";
+import Confetti from "react-confetti";
 import "./Quiz.scss";
 
 export default function Quiz(props) {
@@ -8,6 +9,7 @@ export default function Quiz(props) {
   const [choices, setChoices] = React.useState([]);
   const [isDone, setIsDone] = React.useState(false);
   const [answers, setAnswers] = React.useState([]);
+  const [isConfetti, setIsConfetti] = React.useState(false);
 
   React.useEffect(() => {
     axios
@@ -73,6 +75,7 @@ export default function Quiz(props) {
     scoreSpan.textContent = score;
     document.querySelector(".check-answers").style.display = "none";
     document.querySelector(".score-replay").style.display = "flex";
+    setIsConfetti(true);
   }
 
   function playAgain() {
@@ -81,6 +84,9 @@ export default function Quiz(props) {
 
   return (
     <main className="quiz" style={props.style}>
+      {isConfetti && (
+        <Confetti width={1500} height={2000} />
+      )}
       {isDone && (
         <section className="que-component">
           <Question qu={questions[0]} />
